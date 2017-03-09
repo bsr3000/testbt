@@ -30,14 +30,13 @@ source env/bin/activate
 
 2.1 DB == PSQL
 
-2.2 DATABASES {
-#Change this data to your create DB
+
+#2.2 DATABASES Change this data to your create DB
         'NAME': 'testbt',
         'USER': 'testbtuser',
         'PASSWORD': 'testbt',
         'HOST': '127.0.0.1',
         'PORT': '5432',
-}
 
 2.3 ./manage.py migrate
 
