@@ -48,3 +48,9 @@ if static won`t show, ./manage.py collectstatic
 4. Start server - ./manage.py runserver host:port
 
 5. login url host:port/admin/
+
+Android Project
+
+url: https://github.com/bsr3000/testbtandr
+
+In its root has complied apk`s, tested on emulator android 7.0
