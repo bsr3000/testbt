@@ -1,0 +1,26 @@
+$primary-color: #9E9E9E !default;
+$primary-color-light: #F5F5F5 !default;
+$primary-color-dark: #616161 !default;
+$secondary-color: #FF5722 !default;
+$roboto-font-path: "~materialize-css/fonts/roboto/";
+@import "~materialize-css/sass/materialize";
+@import "~select2/src/scss/core";
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('~material-design-icons/iconfont/MaterialIcons-Regular.eot');
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url('~material-design-icons/iconfont/MaterialIcons-Regular.woff2') format('woff2'),
+  url('~material-design-icons/iconfont/MaterialIcons-Regular.woff') format('woff'),
+  url('~material-design-icons/iconfont/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+header {
+  background: $primary-color;
+  .nav-color {
+    background: $primary-color-dark;
+  }
+}

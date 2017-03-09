@@ -1,0 +1,52 @@
+{% load webpack_loader %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    {% render_bundle "vendor" "css" %}
+    {% render_bundle "dashboard" "css" %}
+</head>
+<body>
+<header>
+    <div class="row">
+        <div class="col s12">
+            <h3>Logo</h3>
+        </div>
+        <div class="col s12 nav-color">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="slide-out" class="breadcrumb side-act">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    {% block breadcrumbs %}
+
+                    {% endblock %}
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="row">
+    <div class="col s12 m2 l2">
+        {% include "layout/nav.html" %}
+    </div>
+    <div class="col s12">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large" href="{% block icon_fab_url %}{% endblock %}">
+            <i class="large material-icons">{% block icon_fab %}add{% endblock %}</i>
+        </a>
+    </div>
+
+</div>
+<div id="modal" class="modal">
+
+</div>
+{% render_bundle "vendor" "js" %}
+{% render_bundle "dashboard" "js" %}
+</body>
+</html>

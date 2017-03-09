@@ -1,0 +1,16 @@
+<div class="modal-content">
+    <div class="container">
+        <div class="row">
+            <p>Are you sure you want to delete user {{ user }}? This action, will also delete his documents
+                count {{ docs.count }}</p>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <form action="{% url "dashboard:users:delete" user.pk %}" method="get">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Yes
+        </button>
+    </form>
+    <button class="btn waves-effect waves-light" type="submit" name="action">No
+    </button>
+</div>

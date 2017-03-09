@@ -1,0 +1,31 @@
+{% extends "layout/base.html" %}
+{% load materializecss %}
+{% block breadcrumbs %}
+    <a href="" class="breadcrumb">Main</a>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 card p-1">
+                <div class="card-title">Hello {{ request.user.email }}!</div>
+            </div>
+            <div class="col s12 card p-1">
+                <div class="card-title">Statistics</div>
+                <div class="card-content">
+                    <div class="col s6">
+                        <p class="center-align"><i class="material-icons big-ic">account_box</i></p>
+                        <p class="center-align">Registered users: {{ users }}</p>
+                    </div>
+                    <div class="col s6">
+                        <p class="center-align"><i class="material-icons big-ic">group</i></p>
+                        <p class="center-align">Groups created: {{ groups }}</p>
+                    </div>
+                    <div class="col push-s3 s6">
+                        <p class="center-align"><i class="material-icons big-ic">insert_drive_file</i></p>
+                        <p class="center-align">Files created: {{ files }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

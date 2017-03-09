@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+{% block breadcrumbs %}
+    <a href="" class="breadcrumb">Group List</a>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% for i in groups %}
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                                <p><span class="card-title">{{ i.gr_name|capfirst }}</span></p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#modal" class="modal-call"
+                               data-href="{% url "dashboard:groups:delete-modal" i.pk %}">Delete</a>
+                            <a href="{% url "dashboard:groups:details" i.pk %}">Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col s12">
+            {% include "dashboard/includes/_pagination.html" with page_obj=users %}
+        </div>
+    </div>
+{% endblock %}
+{% block icon_fab_url %}{% url "dashboard:groups:create" %}{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "layout/base.html" %}
+{% load materializecss %}
+{% block breadcrumbs %}
+    <a href="{% url "dashboard:files:list" %}" class="breadcrumb">My Files</a>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% for i in files %}
+                <div class="col s12 m2 l4 card">
+                    <div class="card-title center-align">{{ i.doc }}</div>
+                    <div class="card-content center-align">
+                        <a href="{{ i.doc.url }}">Download</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+{% block icon_fab_url %}{% url "dashboard:files:create" %}{% endblock %}

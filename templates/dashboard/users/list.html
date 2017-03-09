@@ -1,0 +1,31 @@
+{% extends "layout/base.html" %}
+{% block breadcrumbs %}
+    <a href="" class="breadcrumb">User List</a>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% for i in users %}
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-content">
+                                <img src="{{ i.photo|default:"/media/default.jpg" }}" alt="{{ i.email }}"
+                                     class="circle responsive-img">
+                                <p><span class="card-title">{{ i.first_name|slice:"1"|capfirst }} {{ i.last_name|truncatechars:20|capfirst }}</span></p>
+                                <p>Position: {{ i.position.pos_name|capfirst }}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#modal" class="modal-call"
+                               data-href="{% url "dashboard:users:delete-modal" i.pk %}">Delete</a>
+                            <a href="{% url "dashboard:users:details" i.pk %}">Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col s12">
+            {% include "dashboard/includes/_pagination.html" with page_obj=users %}
+        </div>
+    </div>
+{% endblock %}
+{% block icon_fab_url %}{% url "dashboard:users:create" %}{% endblock %}

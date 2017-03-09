@@ -1,0 +1,9 @@
+<ul id="slide-out" class="side-nav">
+    <li><a>Menu</a></li>
+    <li><a href="{% url "dashboard:users:details" request.user.pk %}">My Profile</a></li>
+    <li><a href="{% url "dashboard:users:list" %}">User List</a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="{% url "dashboard:groups:list" %}">Group List</a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="{% url "dashboard:files:list" %}">My Docs</a></li>
+</ul>
